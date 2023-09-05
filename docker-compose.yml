@@ -1,0 +1,28 @@
+version: '3'
+services:
+  # PostgreSQL service
+  postgres:
+    image: postgres:14-alpine
+    container_name: postgres_db
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # Books API service
+  book-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: books_api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+volumes:
+  pgdata:

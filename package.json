@@ -1,0 +1,36 @@
+{
+  "name": "books-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "migration:up": "ts-node --project ./tsconfig.json ./node_modules/.bin/typeorm migration:run -d src/config/migration.config.ts",
+    "migration:down": "ts-node --project ./tsconfig.json ./node_modules/.bin/typeorm migration:revert -d src/config/migration.config.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.4",
+    "@types/pg": "^8.10.2",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.6.4",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
+}
