@@ -11,6 +11,21 @@ Make sure you have the following installed on your machine:
 
 ## Getting Started
 
+**Environment Variables**
+
+The following environment variables are required to set up and run the application:
+Create an .env file
+
+```
+PORT=3000
+
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=7gvl3A0
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=books
+```
+
 1. **Docker**:
    Run the PostgreSQL database using Docker Compose:
    ```bash
@@ -29,6 +44,8 @@ Make sure you have the following installed on your machine:
    ```bash
    npm run test
    ```
+
+
 
 # Other commands
 
