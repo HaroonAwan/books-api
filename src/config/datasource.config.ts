@@ -7,7 +7,7 @@ dotenv.config();
 export function getConfig() {
   return {
     type: "postgres",
-    host: process.env.POSTGRES_HOST,
+    host: process.env.NODE_ENV == 'production' ? process.env.POSTGRES_HOST : process.env.POSTGRES_HOST_LOCAL,
     port: +(process.env.POSTGRES_PORT ?? 5432),
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,

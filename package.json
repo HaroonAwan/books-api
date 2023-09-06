@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/index.js",
+    "build": "node api.js && npx tsc",
+    "start": "node api.js && node dist/index.js",
     "test": "jest",
     "migration:up": "ts-node --project ./tsconfig.json ./node_modules/.bin/typeorm migration:run -d src/config/migration.config.ts",
     "migration:down": "ts-node --project ./tsconfig.json ./node_modules/.bin/typeorm migration:revert -d src/config/migration.config.ts"
