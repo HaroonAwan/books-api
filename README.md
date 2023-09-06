@@ -24,22 +24,30 @@ POSTGRES_PASSWORD=7gvl3A0
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
 POSTGRES_DB=books
+
+POSTGRES_HOST_LOCAL=localhost
 ```
 
-1. **Docker**:
+1. **Installation**:
+   Install all the dependencies:
+   ```bash
+   npm install
+   ```
+
+2. **Docker**:
    Run the PostgreSQL database using Docker Compose:
    ```bash
    docker-compose up
    ```
 
 
-2. **Database Migrations**:
-   Apply database migrations: (You'll need to create database "books" manually)
+3. **Database Migrations**:
+   Apply database migrations:
    ```bash
    npm run migration:up
    ```
 
-3. **Testing**:
+4. **Testing**:
    Run the test suite:
    ```bash
    npm run test
@@ -58,12 +66,6 @@ POSTGRES_DB=books
 5. **Rollback the last batch of migrations**:
    ```bash
    npm run migration:down
-   ```
-
-4. **Installation**:
-   Install all the dependencies:
-   ```bash
-   npm install
    ```
 
 3. **Building**:
