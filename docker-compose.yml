@@ -17,12 +17,15 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: books_api
+    restart: always
     ports:
       - "3000:3000"
     depends_on:
       - postgres
     env_file:
       - .env
+    environment:
+      - NODE_ENV=production
 
 volumes:
   pgdata:
